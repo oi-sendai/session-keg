@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 BODY{
-  padding-top: 50px;
+  /*padding-top: 50px;*/
   margin-top: 20px;
 }
 .listed-beer {
@@ -36,7 +36,22 @@ margin-top: 30px;
 	font-family: 'Rock Salt', cursive;
 }
 
-h2, h2,h3,h4,h5,p, a {
+.iphone h1, .iphone h2,.iphone h3,.iphone h4,.iphone h5,.iphone p, .iphone a {
 	color:white;
 	font-family: 'Rock Salt', cursive;
+}
+h2, h2,h3,h4,h5,p, a {
+	font-family: 'Raleway', sans-serif;
+}
+.main-font {
+	color:#F4F2EC;
+	font-weight: 900;
+	text-align: center;
+}
+.top {
+	padding: 45px 0;
+background: #383F2B;
+width: 100%;
+height: 456px;
+/*overflow: hidden;*/
 }
