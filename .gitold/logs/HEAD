@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 327a1c69ba518a1a553747ce4a13cdee80979491 unknown <croftnotworking@gmail.com> 1414975663 +0000	initial pull
+327a1c69ba518a1a553747ce4a13cdee80979491 1526c2317cc4889b39d862a5b20e8f6048591103 unknown <croftnotworking@gmail.com> 1415037450 +0000	commit: basic registration saving data
+1526c2317cc4889b39d862a5b20e8f6048591103 55160ca0358fccf4bc9a4795ad3e9088c417cc50 unknown <croftnotworking@gmail.com> 1415048210 +0000	commit: checks for new users
+55160ca0358fccf4bc9a4795ad3e9088c417cc50 3f761759d21e6fb083c9098d40bd069d4a556a45 unknown <croftnotworking@gmail.com> 1415050274 +0000	commit: working registration
+3f761759d21e6fb083c9098d40bd069d4a556a45 24816913774f6fa6426a475dd4ac2273e378bcba unknown <croftnotworking@gmail.com> 1415057258 +0000	commit: returning users to view via firebase service
+24816913774f6fa6426a475dd4ac2273e378bcba aa68afcc5b945facef8ac567fd908c5a73e3011c unknown <croftnotworking@gmail.com> 1415141912 +0000	commit: create
+aa68afcc5b945facef8ac567fd908c5a73e3011c 3bbe9bc22032096e23f09cad86a71877598a6859 unknown <croftnotworking@gmail.com> 1415142602 +0000	commit: read
+3bbe9bc22032096e23f09cad86a71877598a6859 e5a380ece6c5dbf4198d7fd8fb56abd91092bd78 unknown <croftnotworking@gmail.com> 1415143212 +0000	commit: update
+e5a380ece6c5dbf4198d7fd8fb56abd91092bd78 f10eb0ce2616da742a0a02108cca5a3dd9024baf unknown <croftnotworking@gmail.com> 1415147247 +0000	commit: not broken but not working either
+f10eb0ce2616da742a0a02108cca5a3dd9024baf f8efaaed44b8854e070e07cbf5473eecbffc9dfc unknown <croftnotworking@gmail.com> 1415158057 +0000	commit: returns an error
+f8efaaed44b8854e070e07cbf5473eecbffc9dfc f8efaaed44b8854e070e07cbf5473eecbffc9dfc unknown <croftnotworking@gmail.com> 1415161070 +0000	checkout: moving from master to beer-branch
+f8efaaed44b8854e070e07cbf5473eecbffc9dfc afbcbbcb7eb36a223affd2e6af4240d2da8bc7aa unknown <croftnotworking@gmail.com> 1415370812 +0000	commit: routing added
+afbcbbcb7eb36a223affd2e6af4240d2da8bc7aa 0884266cf62054e6666e67c10b74dcb39c823581 unknown <croftnotworking@gmail.com> 1415378291 +0000	commit: create beer
+0884266cf62054e6666e67c10b74dcb39c823581 faabe3fb57225a3c7eb31e9c667a100396c363e5 unknown <croftnotworking@gmail.com> 1415381880 +0000	commit: some horrible verision changing
+faabe3fb57225a3c7eb31e9c667a100396c363e5 bb3d3aac433696e6c26631d08d01c10a72e006ef unknown <croftnotworking@gmail.com> 1415382189 +0000	commit: 3 way data binding
+bb3d3aac433696e6c26631d08d01c10a72e006ef eb4febe9b1fd895ff254c31d9b9280d512cb625d unknown <croftnotworking@gmail.com> 1415385702 +0000	commit: crud backend outlined
+eb4febe9b1fd895ff254c31d9b9280d512cb625d 6354a3b18e91051eb59cfa2cb1369c7e6d281b90 unknown <croftnotworking@gmail.com> 1415393444 +0000	commit: beer controller finished
+6354a3b18e91051eb59cfa2cb1369c7e6d281b90 4e6ed13f62c1eca5c826c09e9eed63286caaf8f7 unknown <croftnotworking@gmail.com> 1415401063 +0000	commit: a style outline
+4e6ed13f62c1eca5c826c09e9eed63286caaf8f7 909a253913974b69fbfc4664a2c1f4ce96485af8 unknown <croftnotworking@gmail.com> 1415487912 +0000	commit: still works
+909a253913974b69fbfc4664a2c1f4ce96485af8 7805980cc730386d84c635656ad754d5916d0e85 unknown <croftnotworking@gmail.com> 1415538264 +0000	commit: adding 'ticked' controller
+7805980cc730386d84c635656ad754d5916d0e85 b02216bac708cbce31150a9e014979d8cc427ee5 unknown <croftnotworking@gmail.com> 1415551684 +0000	commit: ticked logic

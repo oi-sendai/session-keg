@@ -1,0 +1,42 @@
+/* app css stylesheet */
+
+BODY{
+  padding-top: 50px;
+  margin-top: 20px;
+}
+.listed-beer {
+	/*height:70px;*/
+	padding:15px;
+	/*background:#c3c3c3;*/
+	border-bottom:1px solid white;
+}
+.link-to-beer {
+	width: 100%;
+	display: block;
+	/*height: 70px;*/
+}
+
+.iphone {
+	border-radius: 13px;
+	border:3px solid black;
+	max-width: 320px;
+	margin:0 auto;
+	background: url('../img/chalkboard.jpg');
+	height: 568px;
+	overflow: hidden;
+}
+img.beer-logo {
+width: 100%;
+margin-top: 30px;
+}
+.register-title {
+	margin:30px 0;
+	text-align: center;
+	color:white;
+	font-family: 'Rock Salt', cursive;
+}
+
+h2, h2,h3,h4,h5,p, a {
+	color:white;
+	font-family: 'Rock Salt', cursive;
+}

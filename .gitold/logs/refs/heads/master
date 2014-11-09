@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 327a1c69ba518a1a553747ce4a13cdee80979491 unknown <croftnotworking@gmail.com> 1414975663 +0000	initial pull
+327a1c69ba518a1a553747ce4a13cdee80979491 1526c2317cc4889b39d862a5b20e8f6048591103 unknown <croftnotworking@gmail.com> 1415037450 +0000	commit: basic registration saving data
+1526c2317cc4889b39d862a5b20e8f6048591103 55160ca0358fccf4bc9a4795ad3e9088c417cc50 unknown <croftnotworking@gmail.com> 1415048210 +0000	commit: checks for new users
+55160ca0358fccf4bc9a4795ad3e9088c417cc50 3f761759d21e6fb083c9098d40bd069d4a556a45 unknown <croftnotworking@gmail.com> 1415050274 +0000	commit: working registration
+3f761759d21e6fb083c9098d40bd069d4a556a45 24816913774f6fa6426a475dd4ac2273e378bcba unknown <croftnotworking@gmail.com> 1415057258 +0000	commit: returning users to view via firebase service
+24816913774f6fa6426a475dd4ac2273e378bcba aa68afcc5b945facef8ac567fd908c5a73e3011c unknown <croftnotworking@gmail.com> 1415141912 +0000	commit: create
+aa68afcc5b945facef8ac567fd908c5a73e3011c 3bbe9bc22032096e23f09cad86a71877598a6859 unknown <croftnotworking@gmail.com> 1415142602 +0000	commit: read
+3bbe9bc22032096e23f09cad86a71877598a6859 e5a380ece6c5dbf4198d7fd8fb56abd91092bd78 unknown <croftnotworking@gmail.com> 1415143212 +0000	commit: update
+e5a380ece6c5dbf4198d7fd8fb56abd91092bd78 f10eb0ce2616da742a0a02108cca5a3dd9024baf unknown <croftnotworking@gmail.com> 1415147247 +0000	commit: not broken but not working either
+f10eb0ce2616da742a0a02108cca5a3dd9024baf f8efaaed44b8854e070e07cbf5473eecbffc9dfc unknown <croftnotworking@gmail.com> 1415158057 +0000	commit: returns an error

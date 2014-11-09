@@ -1,0 +1,30 @@
+<section ng-controller="MainCtrl">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<button ng-click="change()">change</button>
+			<img class="beer-logo" src="img/beer-logo.png"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h3 class="register-title">Register Here</h3>
+			<form role="form">
+				<div class="form-group">
+					<input type="email" class="form-control" id="inputEmail" ng-model="registerData.email" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputUsername" ng-model="registerData.username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="inputPassword" ng-model="registerData.password" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary" ng-submit="login()" ng-click="login()">Log In</button> 
+				<button class="btn btn-default" ng-click="register()">Register</button>
+				<img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+			</form>
+		</div>
+	</div>
+</section>  
+
+
+
