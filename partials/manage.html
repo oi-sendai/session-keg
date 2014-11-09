@@ -1,31 +1,31 @@
 <section ng-controller="BeerCtrl">
 	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-							<form class="navbar-form navbar-right" role="search">
-						        <div class="form-group">
-						        	<label>Name</label>
-						            <input class="form-control" type="text" ng-model="beerData.name" placeholder="{{beer.name}}">
-						        </div>
-						        <div class="form-group">
-						        	<label>Brewery</label>
-						            <input class="form-control" type="text" ng-model="beerData.brewery" placeholder="{{beer.brewery}}">
-						        </div>
-						        <div class="form-group input-block-level">
-						        	<label>Notes</label>
-						            <textarea class="form-control input-block-level" rows="3" ng-model="beerData.notes" placeholder="{{beer.notes}}">
-						            	
-						            </textarea> 
-						        </div>
-						        <div class="form-group">
-						        	<label>ABV</label>
-						            <input class="form-control" type="text" ng-model="beerData.abv" placeholder="{{beer.abv}}">
-						        </div>
-						        <div class="form-group">
-						        	<label>Price</label>
-						            <input class="form-control" type="text" ng-model="beerData.price" placeholder="{{beer.price}}">
-						        </div>
-				        		<button class="btn btn-default" ng-click="newBeer()" ng-submit="newBeer()">Save</button>
-	      					</form>
+		<div class="col-sm-12">
+			<form class="navbar-form navbar-right" role="search">
+		        <div class="form-group">
+		        	<label>Name</label>
+		            <input class="form-control" type="text" ng-model="beerData.name" placeholder="{{beer.name}}">
+		        </div>
+		        <div class="form-group">
+		        	<label>Brewery</label>
+		            <input class="form-control" type="text" ng-model="beerData.brewery" placeholder="{{beer.brewery}}">
+		        </div>
+		        <div class="form-group input-block-level">
+		        	<label>Notes</label>
+		            <textarea class="form-control input-block-level" rows="3" ng-model="beerData.notes" placeholder="{{beer.notes}}">
+		            	
+		            </textarea> 
+		        </div>
+		        <div class="form-group">
+		        	<label>ABV</label>
+		            <input class="form-control" type="text" ng-model="beerData.abv" placeholder="{{beer.abv}}">
+		        </div>
+		        <div class="form-group">
+		        	<label>Price</label>
+		            <input class="form-control" type="text" ng-model="beerData.price" placeholder="{{beer.price}}">
+		        </div>
+        		<button class="btn btn-default" ng-click="newBeer()" ng-submit="newBeer()">Save</button>
+			</form>
 			<article ng-repeat="beer in beers" class="liste d-beer">
 				<div class="row">
 					<div class="col-sm-10">

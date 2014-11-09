@@ -19,15 +19,19 @@ BODY{
 .iphone {
 	border-radius: 13px;
 	border:3px solid black;
-	max-width: 320px;
+	max-width: 340px;
 	margin:0 auto;
 	background: url('../img/chalkboard.jpg');
 	height: 568px;
-	overflow: hidden;
+	overflow-y: scroll;
 }
 img.beer-logo {
 width: 100%;
 margin-top: 30px;
+}
+img.beer-logo.small {
+width:30px;
+margin: 0 20px 0 0;
 }
 .register-title {
 	margin:30px 0;
@@ -52,6 +56,6 @@ h2, h2,h3,h4,h5,p, a {
 	padding: 45px 0;
 background: #383F2B;
 width: 100%;
-height: 456px;
-/*overflow: hidden;*/
+/*height: 456px;*/
+overflow: hidden;
 }

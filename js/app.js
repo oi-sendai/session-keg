@@ -5,6 +5,7 @@ var App = angular.module('angularfire-login-boilerplate', [ 'ngRoute','firebase'
 	,'BeerCtrl'
 	,'UsersCtrl'
 	// ,'TastedDirective'
+	// ,'TastedDirective'
 	]);
 
 App.config(['$routeProvider', function($routeProvider) {

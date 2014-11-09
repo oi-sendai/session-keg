@@ -1,49 +1,67 @@
 var TastedDirective = angular.module('TastedDirective', []);
 
 TastedDirective
-.directive( 'tasted', function($rootScope, $scope, $q) {
+.directive( 'tasted', function($rootScope,  $q, TastedFactory) {
     return {
       	restrict: 'AE',
      	replace: true,
-      	template: '<input type="checkbox" ng-checked="result()"/>',
+      	template: '<input type="checkbox" ng-checked="result"/>',
       	scope: {
        		beer: '@beer'
       	},
       	link: function(scope, elem, attrs) {
-
-			var beerID = beerID; // current beer ID from view
-			var currentUser = $rootScope.firebaseUser.uid;
-			var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
-			var endpoint = new Firebase(endpointUrl);
-			var result = function(){
-				var deferred = $q.defer();
-				
-				endpoint.once('value', function(snapshot){
-					var foo = snapshot.val() || false;
-
-					if(foo.tasted){
-						console.log('tasted');
-						deferred.resolve(true);
-					} 
-					else {
-						console.log('not tasted');
-						deferred.resolve(false);
-					}
-					
-				});
-				
-				return deferred.promise;
-			};
-
-      }
+      		var beer = scope.beer;
+      		// scope.result = 'things';
+			var test = TastedFactory.result(beer);
+			TastedFactory.result(beer).then(function(data){
+				console.log('then',data);
+				scope.result = data;
+			});
+			console.log(test);
+      	}
     }
 })
 .controller( 'TastedController', function($rootScope, $scope, $q){
 
 });
 
+App.factory("TastedFactory", function($rootScope, $q, $http, $firebase) {
 
-var BeerCtrl = angular.module('BeerCtrl', []);
+  var factory = {};
+  var helper = {};
+  var firebase_url = 'https://brilliant-fire-7870.firebaseio.com/';
+
+  factory.result = function (beerID) {
+		var currentUser = $rootScope.firebaseUser.uid;
+		var endpoint = new Firebase(firebase_url + 'tasting/' + currentUser + '/' + beerID);
+		var deferred = $q.defer();
+		console.log(beerID);
+				
+		endpoint.once('value', function(snapshot){
+			console.log(snapshot.val());
+			var foo = snapshot.val() || false;
+			console.log(snapshot.val());
+			if(foo.tasted){
+				console.log('tasted');
+				deferred.resolve(true);
+			} 
+			else {
+				console.log('not tasted');
+				deferred.resolve(false);
+			}
+			console.log(beerID);
+			// deferred.resolve(true);
+		});
+		
+		return deferred.promise;
+  };
+
+  return factory;
+
+});
+
+
+var BeerCtrl = angular.module('BeerCtrl', ['TastedDirective']);
 
 BeerCtrl.controller('BeerCtrl', function($rootScope, $scope, $http, $q, $routeParams, $firebase) {
 	$scope.beer = $routeParams.beerID || false;
@@ -105,27 +123,27 @@ BeerCtrl.controller('BeerCtrl', function($rootScope, $scope, $http, $q, $routePa
 		endpoint.set(dataObject);
 	}
 
-	$scope.isTicked = function(beerID){
-		var beerID = beerID;
-		var currentUser = $rootScope.firebaseUser.uid;
-		var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
-		var endpoint = new Firebase(endpointUrl);
-		var deferred = $q.defer();
-		endpoint.once('value', function(snapshot){
-			console.log(snapshot.val());
-			var foo = snapshot.val() || false;
-			console.log('foo', foo.tasted);
-			if(foo.tasted){
-				console.log('tasted');
-				deferred.resolve(true);
-			} else {
-				console.log('not tasted');
-				deferred.resolve(false);
-			}
-		});
+	// $scope.isTicked = function(beerID){
+	// 	var beerID = beerID;
+	// 	var currentUser = $rootScope.firebaseUser.uid;
+	// 	var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
+	// 	var endpoint = new Firebase(endpointUrl);
+	// 	var deferred = $q.defer();
+	// 	endpoint.once('value', function(snapshot){
+	// 		console.log(snapshot.val());
+	// 		var foo = snapshot.val() || false;
+	// 		console.log('foo', foo.tasted);
+	// 		if(foo.tasted){
+	// 			console.log('tasted');
+	// 			deferred.resolve(true);
+	// 		} else {
+	// 			console.log('not tasted');
+	// 			deferred.resolve(false);
+	// 		}
+	// 	});
 
-		return deferred.promise;
-	}
+	// 	return deferred.promise;
+	// }
 
 
       // $scope.value1 = true;
