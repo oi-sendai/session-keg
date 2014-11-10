@@ -53,6 +53,10 @@ h2, h2,h3,h4,h5,p, a {
 	font-weight: 900;
 	/*text-align: center;*/
 }
+.other-font {
+	color:#E8C55D;
+	font-weight: 900;
+}
 .top {
 	padding: 45px 0;
 background: #383F2B;

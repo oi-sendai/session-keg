@@ -25,11 +25,11 @@
 					<a class="navbar-brand" href="/">Session Keg</a>
 				</div>
 				<div class="navbar-right navbar-form">
-					{{greeting}}
+					<!-- {{greeting}} -->
 					<button type="submit" ng-controller="MainCtrl" class="btn btn-primary" ng-submit="logout()" ng-click="logout()">Log Out</button>
 					      <form class="navbar-form navbar-right" role="search">
-			      <div class="form-group">
-			            <h5>Hello {{greeting}}</h5>
+			      <div class="form-group" ng-controller="MainCtrl">
+			            <!-- <h5>Hello {{greeting}}</h5> -->
 			        </div>
 			        <!-- <div class="form-group">
 			            <input class="form-control" type="text" ng-model="loginData.email" placeholder="email">
@@ -46,7 +46,8 @@
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-sm-6">
-				<h2 class="main-font">Just add water Beer Fest management system</h2>
+				<h2 class="main-font">Just add water</h2>
+				<h1 class="other-font">Beer Festival Management</h1>
 				<!-- <img src="img/sk-logo.png"/> -->
 					<h4>Paper Free Taste Card</h4>
 					<h4>Brewery and Beer Management System</h4>
