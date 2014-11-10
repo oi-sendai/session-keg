@@ -5,24 +5,43 @@ TastedDirective
     return {
       	restrict: 'AE',
      	replace: true,
-      	template: '<input type="checkbox" ng-checked="result"/>',
+      	template: '<input type="checkbox"  ng-model="result" ng-change="tick()" />',
+      	controller: 'TastedController',
       	scope: {
-       		beer: '@beer'
+       		beer: '@beer',
+       		result: '@result'
       	},
       	link: function(scope, elem, attrs) {
       		var beer = scope.beer;
       		// scope.result = 'things';
-			var test = TastedFactory.result(beer);
+			// var test = TastedFactory.result(beer);
 			TastedFactory.result(beer).then(function(data){
 				console.log('then',data);
 				scope.result = data;
 			});
-			console.log(test);
+			// console.log(test);
       	}
     }
 })
-.controller( 'TastedController', function($rootScope, $scope, $q){
+.controller( 'TastedController', function($rootScope, $scope, $q, $firebase){
+	// console.log('beer',$scope.beer);
+	$scope.tick = function(){
+		var firebase_url = 'https://brilliant-fire-7870.firebaseio.com/';
+		var tasted = $scope.result;
+		var beerID = $scope.beer;
+		var currentUser = $rootScope.firebaseUser.uid;
+		var dataObject = { tasted: tasted }; // a mocked out data object   
+		console.log('tasted',$scope.result);
+		console.log('beer',$scope.result);
+		var endpoint = new Firebase(firebase_url + 'tasting/' + currentUser + '/' + beerID);
+		var sync = $firebase(endpoint);
+		endpoint.set(dataObject);
 
+
+	}
+		// var tasted = tasted;
+	// 	console.log(beerID, dataObject, currentUser, endpointUrl);
+	// }
 });
 
 App.factory("TastedFactory", function($rootScope, $q, $http, $firebase) {
@@ -109,19 +128,19 @@ BeerCtrl.controller('BeerCtrl', function($rootScope, $scope, $http, $q, $routePa
 	}
 	$scope.showBeer($scope.beer );
 
-	$scope.tick = function(beerID, tasted){
-		var beerID = beerID; // current beer ID from view
-		var tasted = tasted;
-		var dataObject = { tasted: tasted }; // a mocked out data object   
-		var currentUser = $rootScope.firebaseUser.uid;
-		var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
-		console.log(beerID, dataObject, currentUser, endpointUrl);
-		var endpoint = new Firebase(endpointUrl);
-		// var sync = $firebase(endpoint);
-		// var syncdObject = sync.$asObject();
-		// syncdObject.push(dataObject);
-		endpoint.set(dataObject);
-	}
+	// $scope.tick = function(beerID, tasted){
+	// 	var beerID = beerID; // current beer ID from view
+	// 	var tasted = tasted;
+	// 	var dataObject = { tasted: tasted }; // a mocked out data object   
+	// 	var currentUser = $rootScope.firebaseUser.uid;
+	// 	var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
+	// 	console.log(beerID, dataObject, currentUser, endpointUrl);
+	// 	var endpoint = new Firebase(endpointUrl);
+	// 	// var sync = $firebase(endpoint);
+	// 	// var syncdObject = sync.$asObject();
+	// 	// syncdObject.push(dataObject);
+	// 	endpoint.set(dataObject);
+	// }
 
 	// $scope.isTicked = function(beerID){
 	// 	var beerID = beerID;
