@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="angularfire-login-boilerplate">
+<html lang="en" ng-app="session-keg">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>AngularFire Login Boilerplate</title>
+		<title>Session Keg</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="A simple template for getting started with AngularFire (AngularJS + Firebase) w/ user login system">
 		<meta name="author" content="Matt Malenczak">
@@ -19,16 +19,43 @@
 		<![endif]-->
 	</head>
 	<body>
+			<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Session Keg</a>
+				</div>
+				<div class="navbar-right navbar-form">
+					{{greeting}}
+					<button type="submit" ng-controller="MainCtrl" class="btn btn-primary" ng-submit="logout()" ng-click="logout()">Log Out</button>
+					      <form class="navbar-form navbar-right" role="search">
+			      <div class="form-group">
+			            <h5>Hello {{greeting}}</h5>
+			        </div>
+			        <!-- <div class="form-group">
+			            <input class="form-control" type="text" ng-model="loginData.email" placeholder="email">
+			        </div>
+			        <div class="form-group">
+			            <input class="form-control" type="password" ng-model="loginData.password" placeholder="password">
+			        </div>
+			        <button class="btn btn-default" ng-click="login()" ng-submit="login">Sign In</button> -->
+      </form>
+				</div>
+			</div>
+		</nav>
 		<section class="top">
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-sm-6">
 				<h2 class="main-font">Just add water Beer Fest management system</h2>
-				<img src="img/sk-logo.png"/>
-
+				<!-- <img src="img/sk-logo.png"/> -->
+					<h4>Paper Free Taste Card</h4>
+					<h4>Brewery and Beer Management System</h4>
+					<h4>Hashtag based tweet wall</h4>
+					<h4>Facebook integration</h4>
+					<h4>Ratings System, and more</h4>
 
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-6" ng-controller="MainCtrl">
 					<div class="container iphone" ng-view></div>
 				</div>
 			</div>
@@ -38,11 +65,7 @@
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-sm-6">
-					<h4>Paper Free Taste Card</h4>
-					<h4>Brewery and Beer Management System</h4>
-					<h4>Hashtag based tweet wall</h4>
-					<h4>Facebook integration</h4>
-					<h4>Ratings System, and more</h4>
+
 
 				</div>
 				<div class="col-sm-6">

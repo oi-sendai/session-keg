@@ -54,12 +54,11 @@ App.factory("TastedFactory", function($rootScope, $q, $http, $firebase) {
 		var currentUser = $rootScope.firebaseUser.uid;
 		var endpoint = new Firebase(firebase_url + 'tasting/' + currentUser + '/' + beerID);
 		var deferred = $q.defer();
-		console.log(beerID);
+		// console.log(beerID);
 				
 		endpoint.once('value', function(snapshot){
-			console.log(snapshot.val());
+			// console.log(snapshot.val());
 			var foo = snapshot.val() || false;
-			console.log(snapshot.val());
 			if(foo.tasted){
 				console.log('tasted');
 				deferred.resolve(true);
@@ -68,8 +67,7 @@ App.factory("TastedFactory", function($rootScope, $q, $http, $firebase) {
 				console.log('not tasted');
 				deferred.resolve(false);
 			}
-			console.log(beerID);
-			// deferred.resolve(true);
+			// console.log(beerID);
 		});
 		
 		return deferred.promise;
@@ -110,7 +108,7 @@ BeerCtrl.controller('BeerCtrl', function($rootScope, $scope, $http, $q, $routePa
 		beerObject.notes   = $scope.beerData.notes;
 		beerObject.abv     = $scope.beerData.abv;
 		beerObject.price   = $scope.beerData.price;
-		console.log(beerObject);
+		// console.log(beerObject);
 		// $scope.messages.$add({text: text});
 		// beersRef.push(beerObject);
 		$scope.beers.$add(beerObject);
@@ -120,54 +118,13 @@ BeerCtrl.controller('BeerCtrl', function($rootScope, $scope, $http, $q, $routePa
 			var beerObject     = {};
 			var beersRef       = new Firebase(firebase_url + 'beers/'+ beer);
 			beersRef.on("value", function (snapshot) {
-				console.log(snapshot.val());
+				// console.log(snapshot.val());
 				$scope.ale = snapshot.val();
 				// $scope.$apply();
 			});
 		}
 	}
 	$scope.showBeer($scope.beer );
-
-	// $scope.tick = function(beerID, tasted){
-	// 	var beerID = beerID; // current beer ID from view
-	// 	var tasted = tasted;
-	// 	var dataObject = { tasted: tasted }; // a mocked out data object   
-	// 	var currentUser = $rootScope.firebaseUser.uid;
-	// 	var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
-	// 	console.log(beerID, dataObject, currentUser, endpointUrl);
-	// 	var endpoint = new Firebase(endpointUrl);
-	// 	// var sync = $firebase(endpoint);
-	// 	// var syncdObject = sync.$asObject();
-	// 	// syncdObject.push(dataObject);
-	// 	endpoint.set(dataObject);
-	// }
-
-	// $scope.isTicked = function(beerID){
-	// 	var beerID = beerID;
-	// 	var currentUser = $rootScope.firebaseUser.uid;
-	// 	var endpointUrl = firebase_url + 'tasting/' + currentUser + '/' + beerID;
-	// 	var endpoint = new Firebase(endpointUrl);
-	// 	var deferred = $q.defer();
-	// 	endpoint.once('value', function(snapshot){
-	// 		console.log(snapshot.val());
-	// 		var foo = snapshot.val() || false;
-	// 		console.log('foo', foo.tasted);
-	// 		if(foo.tasted){
-	// 			console.log('tasted');
-	// 			deferred.resolve(true);
-	// 		} else {
-	// 			console.log('not tasted');
-	// 			deferred.resolve(false);
-	// 		}
-	// 	});
-
-	// 	return deferred.promise;
-	// }
-
-
-      // $scope.value1 = true;
-      // $scope.value2 = 'YES'
-
 
 	$scope.beersuiouoi = [
 	{
